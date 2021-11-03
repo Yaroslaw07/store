@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom"
 import Basket from "./Basket";
 import ProductList from "./ProductList";
 import './App.css';
@@ -45,11 +51,12 @@ function App() {
 
     return ( 
         <div className = "App" >
-            <ProductList products = {products} add = {AddToBasket}/>
-            <hr/>
-            <div class = "basket">
-            <Basket products = {basket}/>
-            </div>
+            <Router>
+                <ProductList products = {products} add = {AddToBasket}/>
+                <hr/>
+
+                <Basket products = {basket}/>
+            </Router>
             
         </div>
     );
